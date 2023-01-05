@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane fx:id="userID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInScreenController">
+<AnchorPane fx:id="userID" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInScreenController">
    <children>
-      <GridPane layoutX="58.0" layoutY="53.0">
+      <GridPane layoutX="58.0" layoutY="53.0" prefHeight="60.0" prefWidth="262.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -22,11 +22,12 @@
          <children>
             <Label fx:id="userLabel" text="User" />
             <Label fx:id="passwordLabel" text="Password" GridPane.rowIndex="1" />
-            <TextField fx:id="userNameTxt" promptText="Enter Username" GridPane.columnIndex="1" />
-            <TextField fx:id="userPasswordTxt" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="userNameTxt" onMouseClicked="#ResetErrorMessage" promptText="Enter Username" GridPane.columnIndex="1" />
+            <TextField fx:id="userPasswordTxt" onMouseClicked="#ResetErrorMessage1" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <Button fx:id="button" layoutX="95.0" layoutY="155.0" mnemonicParsing="false" onAction="#parseUserInputAndPassword" text="Button" />
+      <Button fx:id="button" layoutX="189.0" layoutY="129.0" mnemonicParsing="false" onAction="#verifyUserCredentials" text="Log In" />
       <Label fx:id="ZnID" layoutX="58.0" layoutY="232.0" text="Label" />
+      <Label fx:id="userInputMessage" layoutX="158.0" layoutY="124.0" prefHeight="17.0" prefWidth="200.0" text="Label" textFill="#bc0c0c" visible="false" />
    </children>
 </AnchorPane>

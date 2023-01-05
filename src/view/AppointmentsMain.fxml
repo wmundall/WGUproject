@@ -6,19 +6,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsMainController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsMainController">
    <children>
-      <HBox layoutX="76.0" layoutY="189.0" prefHeight="100.0" prefWidth="463.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#GoToAppointmentsUpdate" text="Search" />
-            <Button mnemonicParsing="false" text="Browse Appointments" />
-            <Button mnemonicParsing="false" text="Add/Update Appointments" />
-         </children>
-      </HBox>
-      <GridPane layoutX="109.0" layoutY="61.0" prefHeight="90.0" prefWidth="275.0">
+      <Button layoutX="109.0" layoutY="222.0" mnemonicParsing="false" onAction="#GoToAppointmentsView" text="Browse Scheduled Appointments" />
+      <GridPane layoutX="109.0" layoutY="61.0" prefHeight="72.0" prefWidth="275.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="144.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="131.0" />
@@ -26,14 +19,15 @@
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Search by Appointment ID" />
-            <Label text="Search by ID" GridPane.rowIndex="1" />
-            <TextField fx:id="EnterApptIDTxt" promptText="Enter Appt ID" GridPane.columnIndex="1" />
-            <TextField promptText="Enter Appointment ID" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="178.0" text="Modify Existing Appointment" />
+            <TextField fx:id="EnterApptIDTxt" onMouseClicked="#resetErrorLbl" prefHeight="25.0" prefWidth="180.0" promptText="Enter Appt ID" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" onAction="#GoToAppointmentsUpdate" text="Search" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
+      <Button layoutX="108.0" layoutY="173.0" mnemonicParsing="false" onAction="#GoToAddAppointments" text="Add New Appointments" />
+      <Button layoutX="509.0" layoutY="347.0" mnemonicParsing="false" onAction="#GoBackToMain" text="Back" />
+      <Label fx:id="inputErrorLbl" layoutX="404.0" layoutY="72.0" text="Label" textFill="#cd1717" visible="false" />
    </children>
 </AnchorPane>

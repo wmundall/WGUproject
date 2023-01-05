@@ -3,7 +3,7 @@ package helper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-
+/**This class configures the JDBC driver and defines methods for making connections to database.*/
 public abstract class JDBC {
     private static final String protocol = "jdbc";
     private static final String vendor = ":mysql:";
@@ -15,11 +15,10 @@ public abstract class JDBC {
     private static final String adminUserName = "root";
     private static final String adminPassword = "Passw0rd!";
     public static Connection connection;
-
+/** This method opens a connection with a database. */
     public static void openConnection()  {
         try { Class.forName(driver);
             connection = DriverManager.getConnection(jdbUrl,adminUserName,adminPassword);
-            System.out.println("connection successful");
     }
         catch(Exception e) {
             System.out.println("Error: " + e.getMessage());
@@ -27,11 +26,10 @@ public abstract class JDBC {
         }
 
 }
-
+/** This method closes the connection with a database.*/
     public static void closeConnection()   {
         try{
             connection.close();
-            System.out.println("disconnected successfuly");
         }
         catch(Exception e){
             System.out.println("Error: " + e.getMessage());
